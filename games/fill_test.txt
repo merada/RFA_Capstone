@@ -1,0 +1,3 @@
+./imgs/open_book.png
+Hello Lauren
+Bye-bye Lauren

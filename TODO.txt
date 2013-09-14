@@ -1,0 +1,10 @@
+TO-DO
+=====
+
+set font: big size, comic sans or andy
+load custom font
+make buttons align neatly
+add input sections
+log in user
+clickable wordTray words
+dictionary - dispose on inability to load words
