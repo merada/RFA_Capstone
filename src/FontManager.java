@@ -16,7 +16,7 @@ public class FontManager {
 	public FontManager() {
 		try {
 			font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(fontFile));
-			font = font.deriveFont(18f);
+			font = font.deriveFont(28f);
 		} catch (Exception e) {
 			System.out.println("Error: fontFile not found.\n" +
 					"       " + e.getMessage());

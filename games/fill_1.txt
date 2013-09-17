@@ -1,1 +1,1 @@
-./imgs/disney.jpg
+./imgs/peter_pan.jpg

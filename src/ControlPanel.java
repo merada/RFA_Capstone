@@ -8,14 +8,7 @@
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Image;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
@@ -54,7 +47,7 @@ public class ControlPanel extends JPanel {
 		// buttons
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setOpaque(false);
-		buttonPanel.setPreferredSize(new Dimension (100, 300));
+		buttonPanel.setPreferredSize(new Dimension (140, 300));
 		buttonPanel.setLayout(new FlowLayout());
 		
 		buttonPanel.add(new Button("Menu", "Menu", inputHandler));
@@ -62,8 +55,8 @@ public class ControlPanel extends JPanel {
 		buttonPanel.add(new Button("Dictionary", "Dictionary", inputHandler));
 		buttonPanel.add(new Button("Exit", "Exit", inputHandler));
 		
-		mng.putConstraint(SpringLayout.WEST, buttonPanel, 70, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, buttonPanel, 30, SpringLayout.SOUTH, anchor);
+		mng.putConstraint(SpringLayout.WEST, buttonPanel, 50, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, buttonPanel, 80, SpringLayout.SOUTH, anchor);
 		
 		setLayout(mng);
 		

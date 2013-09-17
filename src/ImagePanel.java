@@ -1,5 +1,4 @@
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -23,10 +22,18 @@ class ImagePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Image backgroundImage;
 	
+	/**
+	 * Constructs an ImagePanel showing the image from the filename in the parameter
+	 * @param img Filename of the image to be displayed
+	 */
 	public ImagePanel(String img) {
 		this(new ImageIcon(img).getImage());
     }
 	
+	/**
+	 * Constructs an ImagePanel showing the Image from the parameter
+	 * @param img Image to be displayed
+	 */
 	public ImagePanel(Image img) {
 		this.backgroundImage = img;
 		Dimension size = new Dimension(backgroundImage.getWidth(null), backgroundImage.getHeight(null));
@@ -43,7 +50,7 @@ class ImagePanel extends JPanel {
 }
 
 /**
- * Class description
+ * Create a TextArea which 
  *
  * @author Lauren Antrobus
  * @author Merada Richter

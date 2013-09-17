@@ -46,6 +46,7 @@ public class InputPanel extends JPanel {
 		inputText = new JTextField();
 		inputText.setFont(Driver.fontManager.getFont());
 		inputText.setPreferredSize(new Dimension (740 - 50, 390 - 50));
+		inputText.setAlignmentX(10);
 		
 		mng.putConstraint(SpringLayout.WEST, inputText, 14, SpringLayout.EAST, anchor);
 		mng.putConstraint(SpringLayout.NORTH, inputText, 14, SpringLayout.SOUTH, anchor);

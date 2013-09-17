@@ -6,17 +6,12 @@
  * @date 2013.08.06
  */
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
@@ -50,14 +45,14 @@ public class MenuPanel extends JPanel {
 		// buttons
 		JPanel button_panel = new JPanel();
 		button_panel.setOpaque(false);
-		button_panel.setPreferredSize(new Dimension(200, 600));
+		button_panel.setPreferredSize(new Dimension(350, 600));
 		button_panel.setLayout(new FlowLayout());
 		
 		button_panel.add(new Button("New Fill-a-Word game", "Fill-a-Word", inputHandler));
 		button_panel.add(new Button("New Comprehension game", "Comprehension", inputHandler));
 		button_panel.add(new Button("Exit", "Exit", inputHandler));
 		
-		mng.putConstraint(SpringLayout.WEST, button_panel, 150, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.WEST, button_panel, 120, SpringLayout.EAST, anchor);
 		mng.putConstraint(SpringLayout.NORTH, button_panel, 300, SpringLayout.SOUTH, anchor);
 		
 		setLayout(mng);
