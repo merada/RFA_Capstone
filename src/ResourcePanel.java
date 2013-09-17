@@ -58,8 +58,10 @@ public class ResourcePanel extends JPanel {
 		
 		if (!textLeft.isEmpty()) {
 			textAreaLeft = new TextArea(textLeft.get(0), "book_left");
+			textAreaLeft.setEditable(false);
 			imagePanel.add(textAreaLeft);
 			textAreaRight = new TextArea(textRight.get(0), "book_right");
+			textAreaRight.setEditable(false);
 			imagePanel.add(textAreaRight);
 		}
 		
