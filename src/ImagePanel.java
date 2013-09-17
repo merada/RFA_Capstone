@@ -1,3 +1,13 @@
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
 /**
  * Class description
  *
@@ -5,19 +15,12 @@
  * @author Merada Richter
  * @date 2013.08.06
  */
-
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-
 class ImagePanel extends JPanel {
 	
+	/**
+	 * auto-generated serialVersionUID
+	 */
+	private static final long serialVersionUID = 1L;
 	private Image backgroundImage;
 	
 	public ImagePanel(String img) {
@@ -39,12 +42,33 @@ class ImagePanel extends JPanel {
 	}
 }
 
-
+/**
+ * Class description
+ *
+ * @author Lauren Antrobus
+ * @author Merada Richter
+ * @date 2013.08.06
+ */
 class TextArea extends JTextArea {
 	
-	// hardcoded dimensions; originX, originY, width, height
+	/**
+	 * auto-generated serialVersionUID
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Hard-coded dimensions; originX, originY, width, height
+	 */
 	private int [] book_left = {50, 40, 300, 300};
+	
+	/**
+	 * Hard-coded dimensions; originX, originY, width, height
+	 */
 	private int [] book_right = {385, 40, 300, 300};
+	
+	/**
+	 * Hard-coded dimensions; originX, originY, width, height
+	 */
 	private int [] menu = {50, 50, 100, 100};
 	
 	public TextArea(String text, String type) {
@@ -52,6 +76,7 @@ class TextArea extends JTextArea {
 		setOpaque(false);
 		setLineWrap(true);
 		setWrapStyleWord(true);
+		setFont(Driver.fontManager.getFont());
 		
 		switch (type) {
 		case "book_left":
@@ -66,5 +91,29 @@ class TextArea extends JTextArea {
 		default:
 			break;
 		}
+	}
+}
+
+/**
+ * Creates specialized buttons in the theme of the program by setting size, background and font.
+ *
+ * @author Lauren Antrobus
+ * @author Merada Richter
+ * @date 2013.09.17
+ */
+class Button extends JButton {
+
+	/**
+	 * auto-generated serialVersionUID
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	public Button(String title, String command, InputHandler inputHandler) {
+		super(title);
+		setActionCommand(command);
+		addActionListener(inputHandler);
+		
+		setFont(Driver.fontManager.getFont());
+		
 	}
 }

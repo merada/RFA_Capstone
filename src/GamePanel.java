@@ -1,5 +1,6 @@
 /**
- * Class description
+ * Parent panel to initialize and manage individual game panels
+ * (namely the Control, Word, Resource and Input panels).
  *
  * @author Lauren Antrobus
  * @author Merada Richter
@@ -20,12 +21,14 @@ import javax.swing.SpringLayout;
 
 public class GamePanel extends JPanel {
 
+	/**
+	 * auto-generated serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 	
 	private InputHandler inputHandler;
 	
 	private Image backgroundImage = null;
-	private boolean debug = false;
 	
 	private ControlPanel controlPanel;
 	private WordPanel wordPanel;
@@ -46,18 +49,7 @@ public class GamePanel extends JPanel {
 		controlPanel = new ControlPanel(inputHandler);
 		inputPanel = new InputPanel(inputHandler);
 		wordPanel = new WordPanel(inputHandler);
-		
-		if (debug) {
-			resourcePanel.setBackground(Color.RED);
-			resourcePanel.setOpaque(true);
-			controlPanel.setBackground(Color.YELLOW);
-			controlPanel.setOpaque(true);
-			inputPanel.setBackground(Color.BLUE);
-			inputPanel.setOpaque(true);
-			wordPanel.setBackground(Color.GREEN);
-			wordPanel.setOpaque(true);
-		}
-		
+
 		SpringLayout mng = new SpringLayout();
 		mng.putConstraint(SpringLayout.WEST, controlPanel, 1, SpringLayout.EAST, resourcePanel);
 		mng.putConstraint(SpringLayout.WEST, wordPanel, 1, SpringLayout.EAST, inputPanel);

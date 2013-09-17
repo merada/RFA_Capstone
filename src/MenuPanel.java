@@ -53,19 +53,9 @@ public class MenuPanel extends JPanel {
 		button_panel.setPreferredSize(new Dimension(200, 600));
 		button_panel.setLayout(new FlowLayout());
 		
-		JButton btn_fillAword = new JButton("New Fill-a-Word game");
-		btn_fillAword.setActionCommand("Fill-a-Word");
-		btn_fillAword.addActionListener(inputHandler);
-		button_panel.add(btn_fillAword);
-		
-		JButton btn_comprehension = new JButton("New Comprehension game");
-		btn_comprehension.setActionCommand("Comprehension");
-		btn_comprehension.addActionListener(inputHandler);
-		button_panel.add(btn_comprehension);
-		
-		JButton btn_exit = new JButton("Exit");
-		btn_exit.addActionListener(inputHandler);
-		button_panel.add(btn_exit);
+		button_panel.add(new Button("New Fill-a-Word game", "Fill-a-Word", inputHandler));
+		button_panel.add(new Button("New Comprehension game", "Comprehension", inputHandler));
+		button_panel.add(new Button("Exit", "Exit", inputHandler));
 		
 		mng.putConstraint(SpringLayout.WEST, button_panel, 150, SpringLayout.EAST, anchor);
 		mng.putConstraint(SpringLayout.NORTH, button_panel, 300, SpringLayout.SOUTH, anchor);

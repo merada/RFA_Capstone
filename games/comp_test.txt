@@ -1,1 +1,3 @@
-./imgs/disney.jpg
+./imgs/open_book.png
+Hello Lauren
+Bye-bye Lauren

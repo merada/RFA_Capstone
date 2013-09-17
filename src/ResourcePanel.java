@@ -25,6 +25,9 @@ import javax.swing.OverlayLayout;
 
 public class ResourcePanel extends JPanel {
 
+	/**
+	 * auto-generated serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 
 	private InputHandler inputHandler;

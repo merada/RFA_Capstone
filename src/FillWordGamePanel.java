@@ -8,6 +8,9 @@
 
 public class FillWordGamePanel extends GamePanel {
 	
+	/**
+	 * auto-generated serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 	
 	public FillWordGamePanel(InputHandler i, String resource_filename) {

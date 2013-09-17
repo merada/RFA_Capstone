@@ -1,5 +1,5 @@
 /**
- * Class description
+ * Panel to hold word hints. Hints implemented as interactive widgets.
  *
  * @author Lauren Antrobus
  * @author Merada Richter
@@ -16,6 +16,9 @@ import javax.swing.JPanel;
 
 public class WordPanel extends JPanel {
 
+	/**
+	 * auto-generated serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 
 	private InputHandler inputHandler;

@@ -7,6 +7,7 @@
  */
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -16,49 +17,57 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.SpringLayout;
 
 
 public class ControlPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * InputHangler to handle user input
+	 */
 	private InputHandler inputHandler;
 	
-	
+	/**
+	 * Constructor to initialize the Control Panel
+	 * @param i InputHandler to handle user input
+	 */
 	public ControlPanel(InputHandler i) {
 		inputHandler = i;
 
 		initialize();
 	}
 	
-	
+	/**
+	 * Initialize control panel buttons, complete with layout
+	 */
 	private void initialize() {
 		setOpaque(false);
 		setPreferredSize(new Dimension(255, 385));
 		
-		setLayout(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
-		c.fill = GridBagConstraints.NONE;
+		SpringLayout mng = new SpringLayout();
 		
+		JPanel anchor = new JPanel(); // to place other components relatively
+		anchor.setOpaque(false);
+		
+		// buttons
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setOpaque(false);
-		buttonPanel.setLayout(new GridLayout(2,1));
+		buttonPanel.setPreferredSize(new Dimension (100, 300));
+		buttonPanel.setLayout(new FlowLayout());
 		
-		JButton btn_menu = new JButton("Menu");
-		btn_menu.addActionListener(inputHandler);
-		btn_menu.setSize(20, 20);
-		buttonPanel.add(btn_menu);
+		buttonPanel.add(new Button("Menu", "Menu", inputHandler));
+		buttonPanel.add(new Button("Help", "Help", inputHandler));
+		buttonPanel.add(new Button("Dictionary", "Dictionary", inputHandler));
+		buttonPanel.add(new Button("Exit", "Exit", inputHandler));
 		
-		JButton btn_dict = new JButton("Dictionary");
-		btn_dict.addActionListener(inputHandler);
-		btn_dict.setSize(20, 20);
-		buttonPanel.add(btn_dict);
+		mng.putConstraint(SpringLayout.WEST, buttonPanel, 70, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, buttonPanel, 30, SpringLayout.SOUTH, anchor);
 		
-		JButton btn_exit = new JButton("Exit");
-		btn_exit.addActionListener(inputHandler);
-		btn_exit.setSize(20, 20);
-		buttonPanel.add(btn_exit);
+		setLayout(mng);
 		
-		add(buttonPanel, c);
+		add(anchor);
+		add(buttonPanel);
 	}
 }

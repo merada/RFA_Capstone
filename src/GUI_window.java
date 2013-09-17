@@ -10,9 +10,11 @@ import javax.swing.JFrame;
 
 public class GUI_window extends JFrame {
 
+	/**
+	 * auto-generated serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 	
-	private Session session;
 	private InputHandler inputHandler;
 	private GamePanel gamePanel;
 	private MenuPanel menuPanel;
