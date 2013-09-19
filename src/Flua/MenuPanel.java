@@ -56,8 +56,8 @@ public class MenuPanel extends JPanel {
 		// use html to wrap message within label
 		Label help_label = new Label("<html>Click on a button to start a new game<html>");
 				
-		mng.putConstraint(SpringLayout.WEST, help_label, 95, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, help_label, 260, SpringLayout.SOUTH, anchor);
+		mng.putConstraint(SpringLayout.WEST, help_label, 100, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, help_label, 300, SpringLayout.SOUTH, anchor);
 	
 		// buttons
 		JPanel button_panel = new JPanel();
@@ -70,7 +70,7 @@ public class MenuPanel extends JPanel {
 		button_panel.add(new Button("Exit", "Exit", inputHandler));
 		
 		mng.putConstraint(SpringLayout.WEST, button_panel, 120, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, button_panel, 300, SpringLayout.SOUTH, anchor);
+		mng.putConstraint(SpringLayout.NORTH, button_panel, 340, SpringLayout.SOUTH, anchor);
 		
 		setLayout(mng);
 		
