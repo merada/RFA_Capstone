@@ -54,7 +54,7 @@ public class GamePanel extends JPanel {
 	/**
 	 * Constructor to create a new Game
 	 * @param i InputHandler to handle user input
-	 * @param resource_filename name of file holding resource details for the game
+	 * @param filename name of file holding resource details for the game
 	 */
 	public GamePanel(String gameTitle, InputHandler i, String filename) {
 		inputHandler = i;
@@ -65,7 +65,7 @@ public class GamePanel extends JPanel {
 	
 	/**
 	 * Initialize the GUI aspects of the GamePanel (complete with layout)
-	 * @param resource_filename name of file holding resource details for the game
+	 * @param filename name of file holding resource details for the game
 	 */
 	public void initialize(String gameTitle, String filename) {
 		setOpaque(true);

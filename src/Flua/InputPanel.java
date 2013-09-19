@@ -39,6 +39,11 @@ public class InputPanel extends JPanel {
 	private Label helpLabel;
 	
 	/**
+	 * Label holding the current question
+	 */
+	private Label questionLabel;
+	
+	/**
 	 * Index of current question
 	 */
 	private int questionIndex = 0;
@@ -77,10 +82,18 @@ public class InputPanel extends JPanel {
 		JPanel anchor = new JPanel(); // to place other components relatively
 		anchor.setOpaque(false);
 		
-		// help label
-		// created when resources were extracted
-		mng.putConstraint(SpringLayout.WEST, helpLabel, 14, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, helpLabel, 320, SpringLayout.SOUTH, anchor);
+		// question label
+		Label questionTitle = new Label("Question:");
+		questionTitle.setForeground(Color.WHITE);
+
+		mng.putConstraint(SpringLayout.WEST, questionTitle, 18, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, questionTitle, 16, SpringLayout.SOUTH, anchor);
+		
+		questionLabel = new Label(questions.get(questionIndex));
+		questionLabel.setForeground(Color.WHITE);
+
+		mng.putConstraint(SpringLayout.WEST, questionLabel, 46, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, questionLabel, 46, SpringLayout.SOUTH, anchor);
 
 		// previous question button
 		Button previous_btn = new Button("<", "Previous ", inputHandler);
@@ -111,10 +124,18 @@ public class InputPanel extends JPanel {
 		
 		mng.putConstraint(SpringLayout.WEST, inputText, 14, SpringLayout.EAST, anchor);
 		mng.putConstraint(SpringLayout.NORTH, inputText, 100, SpringLayout.SOUTH, anchor);
-		
+
+		// help label
+		// created when resources were extracted
+		mng.putConstraint(SpringLayout.WEST, helpLabel, 14, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, helpLabel, 320, SpringLayout.SOUTH, anchor);
+
+		// set layout for this panel
 		setLayout(mng);
 		
 		add(anchor);
+		add(questionTitle);
+		add(questionLabel);
 		add(inputText);
 		add(next_btn);
 		add(accept_btn);
@@ -189,9 +210,12 @@ public class InputPanel extends JPanel {
 	 * Update the question and answer set to be displayed in the input panel
 	 */
 	public void displayQuestion() {
-		if (answers[questionIndex] != null)
+		if (answers[questionIndex] != null) {
 			inputText.setText(answers[questionIndex]);
-		else
+			questionLabel.setText(questions.get(questionIndex));
+		} else {
 			inputText.setText("");
+			questionLabel.setText(questions.get(questionIndex));
+		}
 	}
 }
