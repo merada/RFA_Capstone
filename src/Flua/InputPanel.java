@@ -39,14 +39,19 @@ public class InputPanel extends JPanel {
 	private Label helpLabel;
 	
 	/**
+	 * Index of current question
+	 */
+	private int questionIndex = 0;
+	
+	/**
 	 * List holding the game's questions
 	 */
 	private ArrayList<String> questions = null;
 	
 	/**
-	 * List holding the user's answers
+	 * Array holding the user's answers (one answer per question)
 	 */
-	private ArrayList<String> answers = null;
+	private String [] answers = null;
 	
 	/**
 	 * Create an input to process user input
@@ -75,40 +80,46 @@ public class InputPanel extends JPanel {
 		// help label
 		// created when resources were extracted
 		mng.putConstraint(SpringLayout.WEST, helpLabel, 14, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, helpLabel, 14, SpringLayout.SOUTH, anchor);
-		
+		mng.putConstraint(SpringLayout.NORTH, helpLabel, 320, SpringLayout.SOUTH, anchor);
+
+		// previous question button
+		Button previous_btn = new Button("<", "Previous ", inputHandler);
+
+		mng.putConstraint(SpringLayout.WEST, previous_btn, 504, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, previous_btn, 314, SpringLayout.SOUTH, anchor);
+
 		// accept answer button
 		Button accept_btn = new Button("Accept", "Accept ", inputHandler);
 
-		mng.putConstraint(SpringLayout.WEST, accept_btn, 600, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, accept_btn, 14, SpringLayout.SOUTH, anchor);
+		mng.putConstraint(SpringLayout.WEST, accept_btn, 554, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, accept_btn, 314, SpringLayout.SOUTH, anchor);
 		
+		// previous question button
+		Button next_btn = new Button(">", "Next ", inputHandler);
+
+		mng.putConstraint(SpringLayout.WEST, next_btn, 654, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, next_btn, 314, SpringLayout.SOUTH, anchor);
+
 		// text input field
-		inputText = resetTextField();
+		inputText = new JTextField();
+		inputText.setOpaque(false);
+		inputText.setFont(Driver.fontManager.getFont());
+		inputText.setForeground(Color.WHITE);
+		inputText.setPreferredSize(new Dimension (740 - 50, 200));
+		inputText.setAlignmentX(10);
+		inputText.setText("Enter your answer here");
 		
 		mng.putConstraint(SpringLayout.WEST, inputText, 14, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, inputText, 110, SpringLayout.SOUTH, anchor);
+		mng.putConstraint(SpringLayout.NORTH, inputText, 100, SpringLayout.SOUTH, anchor);
 		
 		setLayout(mng);
 		
 		add(anchor);
-		add(accept_btn);
 		add(inputText);
-	}
-	
-	/**
-	 * Reset the text field (essentially clear it for a new answer from user)
-	 * @return A blank textfield
-	 */
-	public JTextField resetTextField() {
-		JTextField newField = new JTextField();
-		newField.setOpaque(false);
-		newField.setFont(Driver.fontManager.getFont());
-		newField.setForeground(Color.WHITE);
-		newField.setPreferredSize(new Dimension (740 - 50, 390 - 150));
-		newField.setAlignmentX(10);
-
-		return newField;
+		add(next_btn);
+		add(accept_btn);
+		add(previous_btn);
+		add(helpLabel);
 	}
 	
 	/**
@@ -119,7 +130,6 @@ public class InputPanel extends JPanel {
 		Scanner input_stream = null;
 		
 		questions = new ArrayList<String>();
-		answers = new ArrayList<String>();
 		
 		try {
 			input_stream = new Scanner (new FileInputStream(filename));
@@ -130,6 +140,8 @@ public class InputPanel extends JPanel {
 			}
 			
 			input_stream.close();
+			
+			answers = new String [questions.size()];
 
 		} catch (Exception e) {
 			System.out.println("Error: file "+filename+" not found.");
@@ -149,7 +161,37 @@ public class InputPanel extends JPanel {
 	 * Accept the current answer as valid, saving both the answer and the question to the user's progress file
 	 */
 	public void acceptAnswer() {
-		answers.add(inputText.getText());
-		resetTextField();
+		answers[questionIndex] = inputText.getText();
+		nextQuestion();
+	}
+	
+	/**
+	 * Move to the next question (without saving the answer)
+	 */
+	public void nextQuestion() {
+		if (questionIndex < questions.size() - 1) {
+			questionIndex++;
+			displayQuestion();
+		}
+	}
+
+	/**
+	 * Move to the previous question (without saving the answer)
+	 */
+	public void previousQuestion() {
+		if (questionIndex > 0) {
+			questionIndex--;
+			displayQuestion();
+		}
+	}
+	
+	/**
+	 * Update the question and answer set to be displayed in the input panel
+	 */
+	public void displayQuestion() {
+		if (answers[questionIndex] != null)
+			inputText.setText(answers[questionIndex]);
+		else
+			inputText.setText("");
 	}
 }

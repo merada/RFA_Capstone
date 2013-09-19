@@ -32,7 +32,7 @@ public class InputHandler implements ActionListener {
 		
 		switch (cmd[0]) { // lexically listed
 			case "Accept":
-				
+				gui.acceptAnswer();
 				break;
 			case "Dictionary":
 				(new Dictionary()).run();
@@ -48,6 +48,12 @@ public class InputHandler implements ActionListener {
 				break;
 			case "New":
 				gui.restartGame(new Game(cmd[1]));
+				break;
+			case "Next":
+				gui.nextQuestion();
+				break;
+			case "Previous":
+				gui.previousQuestion();
 				break;
 			case "Word":
 				gui.addWordToInput(cmd[1]);

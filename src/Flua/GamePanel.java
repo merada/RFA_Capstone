@@ -107,6 +107,20 @@ public class GamePanel extends JPanel {
 	public void acceptAnswer() {
 		inputPanel.acceptAnswer();
 	}
+	
+	/**
+	 * Change to next question
+	 */
+	public void nextQuestion() {
+		inputPanel.nextQuestion();
+	}
+	
+	/**
+	 * Change to previous question
+	 */
+	public void previousQuestion() {
+		inputPanel.previousQuestion();
+	}
 
 	/**
 	 * Choose new random words for the WordTray

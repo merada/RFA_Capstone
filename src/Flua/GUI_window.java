@@ -131,4 +131,20 @@ public class GUI_window extends JFrame {
 	public void acceptAnswer() {
 		gamePanel.acceptAnswer();
 	}
+	
+	/**
+	 * Change to next question
+	 */
+	public void nextQuestion() {
+		gamePanel.nextQuestion();
+	}
+
+	
+	/**
+	 * Change to previous question
+	 */
+	public void previousQuestion() {
+		gamePanel.previousQuestion();
+	}
+
 }
