@@ -1,10 +1,4 @@
 package Flua;
-/**
- * Panel to process user input.
- *
- * @author Lauren Antrobus
- * @author Merada Richter
- */
 
 import java.awt.Dimension;
 
@@ -12,7 +6,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-
+/**
+ * Panel to process user input
+ *
+ * @author Lauren Antrobus
+ * @author Merada Richter
+ */
 public class InputPanel extends JPanel {
 
 	/**

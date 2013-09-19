@@ -3,7 +3,7 @@ package Flua;
 import javax.swing.JFrame;
 
 /**
- * Class description
+ * Manages GUI components
  *
  * @author Lauren Antrobus
  * @author Merada Richter

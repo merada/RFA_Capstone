@@ -1,14 +1,14 @@
 package Flua;
+
+import java.awt.Font;
+import java.io.FileInputStream;
+
 /**
  * FontManager class to load and initialize a custom font
  *
  * @author Lauren Antrobus
  * @author Merada Richter
  */
-
-import java.awt.Font;
-import java.io.FileInputStream;
-
 public class FontManager {
 	/**
 	 * Font for the GUI

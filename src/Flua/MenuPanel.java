@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
 /**
- * Class description
+ * Main panel containing controls to begin a new game
  *
  * @author Lauren Antrobus
  * @author Merada Richter
@@ -38,7 +38,7 @@ public class MenuPanel extends JPanel {
 	 */
 	public MenuPanel(InputHandler i) {
 		inputHandler = i;
-		backgroundImage = new ImageIcon("./imgs/bg_menu_00.jpg").getImage();
+		backgroundImage = new ImageIcon("./imgs/bg_menu.jpg").getImage();
 
 		initialize();
 	}

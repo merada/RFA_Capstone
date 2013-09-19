@@ -1,22 +1,18 @@
 package Flua;
+
+import java.awt.Dimension;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.JPanel;
+
 /**
  * Panel to hold word hints. Hints implemented as interactive widgets.
  *
  * @author Lauren Antrobus
  * @author Merada Richter
  */
-
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-
-
 public class WordPanel extends JPanel {
 
 	/**

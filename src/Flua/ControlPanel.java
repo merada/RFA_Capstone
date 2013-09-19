@@ -1,10 +1,4 @@
 package Flua;
-/**
- * Class description
- *
- * @author Lauren Antrobus
- * @author Merada Richter
- */
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -12,7 +6,12 @@ import java.awt.FlowLayout;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
-
+/**
+ * Panel containing game controls (Main Menu, Dictionary Lookup, Exit, etc) 
+ *
+ * @author Lauren Antrobus
+ * @author Merada Richter
+ */
 public class ControlPanel extends JPanel {
 
 	/**
