@@ -1,5 +1,6 @@
 package Flua;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -71,19 +72,43 @@ public class InputPanel extends JPanel {
 		JPanel anchor = new JPanel(); // to place other components relatively
 		anchor.setOpaque(false);
 		
+		// help label
+		// created when resources were extracted
+		mng.putConstraint(SpringLayout.WEST, helpLabel, 14, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, helpLabel, 14, SpringLayout.SOUTH, anchor);
+		
+		// accept answer button
+		Button accept_btn = new Button("Accept", "Accept ", inputHandler);
+
+		mng.putConstraint(SpringLayout.WEST, accept_btn, 600, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, accept_btn, 14, SpringLayout.SOUTH, anchor);
+		
 		// text input field
-		inputText = new JTextField();
-		inputText.setFont(Driver.fontManager.getFont());
-		inputText.setPreferredSize(new Dimension (740 - 50, 390 - 50));
-		inputText.setAlignmentX(10);
+		inputText = resetTextField();
 		
 		mng.putConstraint(SpringLayout.WEST, inputText, 14, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, inputText, 14, SpringLayout.SOUTH, anchor);
+		mng.putConstraint(SpringLayout.NORTH, inputText, 110, SpringLayout.SOUTH, anchor);
 		
 		setLayout(mng);
 		
 		add(anchor);
+		add(accept_btn);
 		add(inputText);
+	}
+	
+	/**
+	 * Reset the text field (essentially clear it for a new answer from user)
+	 * @return A blank textfield
+	 */
+	public JTextField resetTextField() {
+		JTextField newField = new JTextField();
+		newField.setOpaque(false);
+		newField.setFont(Driver.fontManager.getFont());
+		newField.setForeground(Color.WHITE);
+		newField.setPreferredSize(new Dimension (740 - 50, 390 - 150));
+		newField.setAlignmentX(10);
+
+		return newField;
 	}
 	
 	/**
@@ -118,5 +143,13 @@ public class InputPanel extends JPanel {
 	 */
 	public void addWord(String word) {
 		inputText.setText(inputText.getText() + word);
+	}
+	
+	/**
+	 * Accept the current answer as valid, saving both the answer and the question to the user's progress file
+	 */
+	public void acceptAnswer() {
+		answers.add(inputText.getText());
+		resetTextField();
 	}
 }

@@ -31,6 +31,9 @@ public class InputHandler implements ActionListener {
 		String[] cmd = e.getActionCommand().split(" ");
 		
 		switch (cmd[0]) { // lexically listed
+			case "Accept":
+				
+				break;
 			case "Dictionary":
 				(new Dictionary()).run();
 				break;

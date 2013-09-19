@@ -124,4 +124,11 @@ public class GUI_window extends JFrame {
 	public void addWordToInput(String word) {
 		gamePanel.addWordToInput(word);
 	}
+	
+	/**
+	 * Accept current answer as valid
+	 */
+	public void acceptAnswer() {
+		gamePanel.acceptAnswer();
+	}
 }

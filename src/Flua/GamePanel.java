@@ -100,6 +100,13 @@ public class GamePanel extends JPanel {
 	public void addWordToInput(String word) {
 		inputPanel.addWord(word);
 	}
+	
+	/**
+	 * Accept current answer as valid
+	 */
+	public void acceptAnswer() {
+		inputPanel.acceptAnswer();
+	}
 
 	/**
 	 * Choose new random words for the WordTray

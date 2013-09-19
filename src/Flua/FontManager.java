@@ -1,6 +1,5 @@
 package Flua;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.io.FileInputStream;
 
