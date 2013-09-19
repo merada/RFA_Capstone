@@ -28,23 +28,24 @@ public class InputHandler implements ActionListener {
 	 * Details actions to be taken for each event occurring in the GUI
 	 */
 	public void actionPerformed(ActionEvent e) {
-		String cmd = e.getActionCommand();
+		String[] cmd = e.getActionCommand().split(" ");
 		
-		switch (cmd) { // lexically listed
-			case "Comprehension":
-				gui.startGame(new Game("Comprehension"));
-				break;
+		
+		switch (cmd[0]) { // lexically listed
 			case "Dictionary":
 				(new Dictionary()).run();
 				break;
 			case "Exit":
 				System.exit(0);
 				break;			
-			case "Fill-a-Word":
-				gui.startGame(new Game("Fill-a-Word"));
+			case "Game":
+				gui.startGame(new Game(cmd[1]));
 				break;
 			case "Menu":
 				gui.returnToMenu();
+				break;
+			case "Word":
+				gui.addWordToInput(cmd[1]);
 				break;
 			default:
 				System.out.println("Error: ActionEvent \'" + cmd + "\' not catered for.");

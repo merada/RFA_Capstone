@@ -92,4 +92,19 @@ public class GamePanel extends JPanel {
 		super.paintComponent(g);
 		g.drawImage(backgroundImage, 0, 0, backgroundImage.getWidth(null), backgroundImage.getHeight(null), null);
 	}
+	
+	/**
+	 * Display word in InputTray
+	 * @param word Word to display
+	 */
+	public void addWordToInput(String word) {
+		inputPanel.addWord(word);
+	}
+
+	/**
+	 * Choose new random words for the WordTray
+	 */
+	public void chooseNewWords() {
+		wordPanel.chooseRandomWords();
+	}
 }

@@ -65,4 +65,12 @@ public class InputPanel extends JPanel {
 		add(anchor);
 		add(inputText);
 	}
+	
+	/**
+	 * Display word in InputTray
+	 * @param word Word to display
+	 */
+	public void addWord(String word) {
+		inputText.setText(inputText.getText() + word);
+	}
 }

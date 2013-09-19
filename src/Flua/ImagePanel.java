@@ -1,13 +1,16 @@
 package Flua;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 
 /**
  * Wrapper class to create a panel with its background set to an image
@@ -55,7 +58,6 @@ class ImagePanel extends JPanel {
  *
  * @author Lauren Antrobus
  * @author Merada Richter
- * @date 2013.08.06
  */
 class TextArea extends JTextArea {
 	
@@ -107,7 +109,6 @@ class TextArea extends JTextArea {
  *
  * @author Lauren Antrobus
  * @author Merada Richter
- * @date 2013.09.17
  */
 class Button extends JButton {
 
@@ -128,6 +129,48 @@ class Button extends JButton {
 		addActionListener(inputHandler);
 		
 		setFont(Driver.fontManager.getFont());
+	}
+	
+	/**
+	 * Construct a WordPanel button complete with label, action-command and links to the user input handler
+	 * @param title Text to display on the button
+	 * @param command Action-command to be assigned to the button
+	 * @param inputHandler Handler to respond to user interaction
+	 * @param b Used to differentiate between WordPanel buttons and other buttons
+	 */
+	public Button(String title, String command, InputHandler inputHandler, boolean b) {
+		super(title);
+		setActionCommand(command);
+		addActionListener(inputHandler);
 		
+		setBackground(Color.BLACK);
+		setForeground(Color.WHITE);
+		
+		setFont(Driver.fontManager.getFont());
+	}
+}
+
+/**
+ * Create a Label with specific dimensions and display settings
+ *
+ * @author Lauren Antrobus
+ * @author Merada Richter
+ */
+class Label extends JLabel {
+
+	/**
+	 * auto-generated serialVersionUID
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Construct a label with a specific message
+	 * @param title Text to display on the label
+	 */
+	public Label(String message) {
+		super(message, SwingConstants.CENTER);
+		setOpaque(false);
+		
+		setFont(Driver.fontManager.getFont());
 	}
 }

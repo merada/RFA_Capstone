@@ -96,6 +96,7 @@ public class GUI_window extends JFrame {
 		}
 		else {
 			System.out.print("Error: "+ game.getTitle() + " is not a proper game title");
+			System.exit(0);
 		}
 	}
 	
@@ -105,5 +106,13 @@ public class GUI_window extends JFrame {
 	public void returnToMenu() {
 		gamePanel.setVisible(false);
 		menuPanel.setVisible(true);
+	}
+	
+	/**
+	 * Display word in InputTray
+	 * @param word Word to display
+	 */
+	public void addWordToInput(String word) {
+		gamePanel.addWordToInput(word);
 	}
 }

@@ -51,6 +51,13 @@ public class MenuPanel extends JPanel {
 		
 		JPanel anchor = new JPanel(); // to place other components relatively
 		anchor.setOpaque(false);
+		
+		// help text label
+		// use html to wrap message within label
+		Label help_label = new Label("<html>Click on a button to start a new game<html>");
+				
+		mng.putConstraint(SpringLayout.WEST, help_label, 95, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, help_label, 260, SpringLayout.SOUTH, anchor);
 	
 		// buttons
 		JPanel button_panel = new JPanel();
@@ -58,8 +65,8 @@ public class MenuPanel extends JPanel {
 		button_panel.setPreferredSize(new Dimension(350, 600));
 		button_panel.setLayout(new FlowLayout());
 		
-		button_panel.add(new Button("New Fill-a-Word game", "Fill-a-Word", inputHandler));
-		button_panel.add(new Button("New Comprehension game", "Comprehension", inputHandler));
+		button_panel.add(new Button("New Fill-a-Word game", "Game Fill-a-Word", inputHandler));
+		button_panel.add(new Button("New Comprehension game", "Game Comprehension", inputHandler));
 		button_panel.add(new Button("Exit", "Exit", inputHandler));
 		
 		mng.putConstraint(SpringLayout.WEST, button_panel, 120, SpringLayout.EAST, anchor);
@@ -68,6 +75,7 @@ public class MenuPanel extends JPanel {
 		setLayout(mng);
 		
 		add(anchor);
+		add(help_label);
 		add(button_panel);
 	}
 	

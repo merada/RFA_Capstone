@@ -39,7 +39,7 @@ public class ControlPanel extends JPanel {
 	 */
 	private void initialize() {
 		setOpaque(false);
-		setPreferredSize(new Dimension(255, 385));
+		setPreferredSize(new Dimension(300, 385));
 		
 		SpringLayout mng = new SpringLayout();
 		

@@ -58,6 +58,7 @@ public class Dictionary extends javax.swing.JFrame
 		System.out.println(definition);
 		System.out.println();
 	    }
+	    input.close();
 	}
 	catch(IOException e)
 	{
