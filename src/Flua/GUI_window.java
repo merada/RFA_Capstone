@@ -33,13 +33,13 @@ public class GUI_window extends JFrame {
 	/**
 	 * List of files containing resources for games
 	 */
-	private String [] fill_game_filenames = {"fill_0.txt","fill_1.txt","fill_2.txt"};
+	private String [] fill_game_filenames = {"fill_0_","fill_1_","fill_2_"};
 
 	/**
 	 * List of files containing resources for games
 	 */
-	private String [] comp_game_filenames = {"comp_test.txt"};
-	
+	private String [] comp_game_filenames = {"comp_test_"};
+
 	/**
 	 * Index to keep track of which resources have been used during the current session
 	 */
@@ -76,7 +76,7 @@ public class GUI_window extends JFrame {
 	}
 	
 	/**
-	 * Create a new GamePanel of the type of Game specified in the parameter
+	 * From the Main Menu, create a new GamePanel of the type of Game specified in the parameter
 	 * @param game The game type to be started (Fill-a-Word or Comprehension)
 	 */
 	public void startGame(Game game) {
@@ -96,15 +96,24 @@ public class GUI_window extends JFrame {
 		}
 		else {
 			System.out.print("Error: "+ game.getTitle() + " is not a proper game title");
-			System.exit(0);
+			returnToMenu();
 		}
 	}
 	
 	/**
-	 * Return to the main menu
+	 * From an existing game, create a new GamePanel of the type of Game specified in the parameter
+	 * @param game The game type to be started (Fill-a-Word or Comprehension)
+	 */
+	public void restartGame(Game game) {
+		returnToMenu();
+		startGame(game);
+	}
+	
+	/**
+	 * Return to the main menu by removing the current game
 	 */
 	public void returnToMenu() {
-		gamePanel.setVisible(false);
+		this.remove(gamePanel);
 		menuPanel.setVisible(true);
 	}
 	

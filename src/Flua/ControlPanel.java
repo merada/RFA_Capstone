@@ -28,16 +28,17 @@ public class ControlPanel extends JPanel {
 	 * Constructor to initialize the Control Panel
 	 * @param i InputHandler to handle user input
 	 */
-	public ControlPanel(InputHandler i) {
+	public ControlPanel(InputHandler i, String gameTitle) {
 		inputHandler = i;
 
-		initialize();
+		initialize(gameTitle);
 	}
 	
 	/**
 	 * Initialize the GUI aspects of the ControlPanel (complete with layout)
+	 * @param gameTitle Title of the game currently being played
 	 */
-	private void initialize() {
+	private void initialize(String gameTitle) {
 		setOpaque(false);
 		setPreferredSize(new Dimension(300, 385));
 		
@@ -49,20 +50,29 @@ public class ControlPanel extends JPanel {
 		// buttons
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setOpaque(false);
-		buttonPanel.setPreferredSize(new Dimension (140, 300));
+		buttonPanel.setPreferredSize(new Dimension (200, 300));
 		buttonPanel.setLayout(new FlowLayout());
-		
-		buttonPanel.add(new Button("Menu", "Menu", inputHandler));
+
+		buttonPanel.add(new Button("New Game", "New " + gameTitle, inputHandler));
+		buttonPanel.add(new Button("Main Menu", "Menu", inputHandler));
 		buttonPanel.add(new Button("Help", "Help", inputHandler));
 		buttonPanel.add(new Button("Dictionary", "Dictionary", inputHandler));
 		buttonPanel.add(new Button("Exit", "Exit", inputHandler));
 		
-		mng.putConstraint(SpringLayout.WEST, buttonPanel, 50, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, buttonPanel, 80, SpringLayout.SOUTH, anchor);
+		mng.putConstraint(SpringLayout.WEST, buttonPanel, 20, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, buttonPanel, 70, SpringLayout.SOUTH, anchor);
 		
+		// game title
+		Label gameTitleLabel = new Label(gameTitle);
+				
+		mng.putConstraint(SpringLayout.WEST, gameTitleLabel, 40, SpringLayout.EAST, anchor);
+		mng.putConstraint(SpringLayout.NORTH, gameTitleLabel, 330, SpringLayout.SOUTH, anchor);
+
+		// set layout for this tray
 		setLayout(mng);
 		
 		add(anchor);
 		add(buttonPanel);
+		add(gameTitleLabel);
 	}
 }

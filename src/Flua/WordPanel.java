@@ -118,7 +118,7 @@ public class WordPanel extends JPanel {
 			}
 		} catch (Exception e) {
 			System.out.println("Error: file "+filename+" not found.");
-			System.exit(0);
+			inputHandler.returnToMenu();
 		}
 	}
 	
@@ -127,9 +127,7 @@ public class WordPanel extends JPanel {
 	 */
 	public void chooseRandomWords() {
 		for (int i = 0; i < indices.length; i++) {
-			int newRandomWordIndex = random.nextInt(words.size());
-			indices[i] = newRandomWordIndex;
-			System.out.print(indices[i] + " ");
+			indices[i] = random.nextInt(words.size());
 		}
 	}
 }

@@ -19,6 +19,6 @@ public class ComprehensionGamePanel extends GamePanel {
 	 * @param resource_filename name of file holding resource details for the game
 	 */
 	public ComprehensionGamePanel(InputHandler i, String resource_filename) {
-		super(i, resource_filename);
+		super("Comprehension", i, resource_filename);
 	}
 }

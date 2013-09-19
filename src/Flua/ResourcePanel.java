@@ -103,15 +103,18 @@ public class ResourcePanel extends JPanel {
 		
 		try {
 			input_stream = new Scanner (new FileInputStream(filename));
+			
+			imageFilename = input_stream.nextLine();
+			while (input_stream.hasNextLine()) {
+				textLeft.add(input_stream.nextLine());
+				textRight.add(input_stream.nextLine());
+			}
+			
+			input_stream.close();
+			
 		} catch (Exception e) {
 			System.out.println("Error: file "+filename+" not found.");
-			System.exit(0);
-		}
-		
-		imageFilename = input_stream.nextLine();
-		while (input_stream.hasNextLine()) {
-			textLeft.add(input_stream.nextLine());
-			textRight.add(input_stream.nextLine());
+			inputHandler.returnToMenu();
 		}
 	}
 }

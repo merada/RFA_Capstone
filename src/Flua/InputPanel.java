@@ -1,6 +1,9 @@
 package Flua;
 
 import java.awt.Dimension;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -30,11 +33,28 @@ public class InputPanel extends JPanel {
 	private JTextField inputText;
 	
 	/**
+	 * Label holding input instructions
+	 */
+	private Label helpLabel;
+	
+	/**
+	 * List holding the game's questions
+	 */
+	private ArrayList<String> questions = null;
+	
+	/**
+	 * List holding the user's answers
+	 */
+	private ArrayList<String> answers = null;
+	
+	/**
 	 * Create an input to process user input
 	 * @param i InputHandler to handle user input
 	 */
-	public InputPanel(InputHandler i) {
+	public InputPanel(InputHandler i, String filename) {
 		inputHandler = i;
+		
+		extractInput(filename);
 
 		initialize();
 	}
@@ -64,6 +84,32 @@ public class InputPanel extends JPanel {
 		
 		add(anchor);
 		add(inputText);
+	}
+	
+	/**
+	 * Extract game input to be displayed in the input tray
+	 * @param filename Name of file holding input details for the game
+	 */
+	public void extractInput(String filename) {
+		Scanner input_stream = null;
+		
+		questions = new ArrayList<String>();
+		answers = new ArrayList<String>();
+		
+		try {
+			input_stream = new Scanner (new FileInputStream(filename));
+			helpLabel = new Label(input_stream.nextLine());
+			
+			while (input_stream.hasNextLine()) {
+				questions.add(input_stream.nextLine());
+			}
+			
+			input_stream.close();
+
+		} catch (Exception e) {
+			System.out.println("Error: file "+filename+" not found.");
+			inputHandler.returnToMenu();
+		}
 	}
 	
 	/**

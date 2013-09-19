@@ -25,11 +25,10 @@ public class InputHandler implements ActionListener {
 	}
 	
 	/**
-	 * Details actions to be taken for each event occurring in the GUI
+	 * Details the actions to be taken for each event occurring in the GUI
 	 */
 	public void actionPerformed(ActionEvent e) {
 		String[] cmd = e.getActionCommand().split(" ");
-		
 		
 		switch (cmd[0]) { // lexically listed
 			case "Dictionary":
@@ -44,12 +43,22 @@ public class InputHandler implements ActionListener {
 			case "Menu":
 				gui.returnToMenu();
 				break;
+			case "New":
+				gui.restartGame(new Game(cmd[1]));
+				break;
 			case "Word":
 				gui.addWordToInput(cmd[1]);
 				break;
 			default:
-				System.out.println("Error: ActionEvent \'" + cmd + "\' not catered for.");
+				System.out.println("Error: ActionEvent \'" + cmd[0] + "\' not catered for.");
 				break;
 		}
+	}
+	
+	/**
+	 * Used when files are not found and a game cannot be started (InputHandler accessible by all interactive components)
+	 */
+	public void returnToMenu() {
+		gui.returnToMenu();
 	}
 }

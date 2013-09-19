@@ -56,23 +56,23 @@ public class GamePanel extends JPanel {
 	 * @param i InputHandler to handle user input
 	 * @param resource_filename name of file holding resource details for the game
 	 */
-	public GamePanel(InputHandler i, String resource_filename) {
+	public GamePanel(String gameTitle, InputHandler i, String filename) {
 		inputHandler = i;
 		backgroundImage = new ImageIcon("./imgs/bg_game.jpg").getImage();
 		
-		initialize(resource_filename);
+		initialize(gameTitle, filename);
 	}
 	
 	/**
 	 * Initialize the GUI aspects of the GamePanel (complete with layout)
 	 * @param resource_filename name of file holding resource details for the game
 	 */
-	public void initialize(String resource_filename) {
+	public void initialize(String gameTitle, String filename) {
 		setOpaque(true);
 		
-		resourcePanel = new ResourcePanel(inputHandler, resource_filename);
-		controlPanel = new ControlPanel(inputHandler);
-		inputPanel = new InputPanel(inputHandler);
+		resourcePanel = new ResourcePanel(inputHandler, filename + "resource.txt");
+		controlPanel = new ControlPanel(inputHandler, gameTitle);
+		inputPanel = new InputPanel(inputHandler, filename + "input.txt");
 		wordPanel = new WordPanel(inputHandler);
 
 		SpringLayout mng = new SpringLayout();

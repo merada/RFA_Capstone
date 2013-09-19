@@ -19,6 +19,6 @@ public class FillWordGamePanel extends GamePanel {
 	 * @param resource_filename name of file holding resource details for the game
 	 */
 	public FillWordGamePanel(InputHandler i, String resource_filename) {
-		super(i, resource_filename);
+		super("Fill-a-Word", i, resource_filename);
 	}
 }
