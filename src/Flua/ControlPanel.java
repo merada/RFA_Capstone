@@ -55,12 +55,11 @@ public class ControlPanel extends JPanel {
 
 		buttonPanel.add(new Button("New Game", "New " + gameTitle, inputHandler));
 		buttonPanel.add(new Button("Main Menu", "Menu", inputHandler));
-		buttonPanel.add(new Button("Help", "Help", inputHandler));
 		buttonPanel.add(new Button("Dictionary", "Dictionary", inputHandler));
 		buttonPanel.add(new Button("Exit", "Exit", inputHandler));
 		
 		mng.putConstraint(SpringLayout.WEST, buttonPanel, 20, SpringLayout.EAST, anchor);
-		mng.putConstraint(SpringLayout.NORTH, buttonPanel, 70, SpringLayout.SOUTH, anchor);
+		mng.putConstraint(SpringLayout.NORTH, buttonPanel, 80, SpringLayout.SOUTH, anchor);
 		
 		// game title
 		Label gameTitleLabel = new Label(gameTitle);
