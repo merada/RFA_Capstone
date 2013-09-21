@@ -35,7 +35,7 @@ class TextArea extends JTextArea {
 		setOpaque(false);
 		setLineWrap(true);
 		setWrapStyleWord(true);
-		setFont(Driver.fontManager.getFont());
+		setFont(GUI_window.fontManager.getFont());
 		
 		switch (type) {
 		case "book_left":

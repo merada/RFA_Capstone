@@ -116,7 +116,7 @@ public class InputPanel extends JPanel {
 		// text input field
 		inputText = new JTextField();
 		inputText.setOpaque(false);
-		inputText.setFont(Driver.fontManager.getFont());
+		inputText.setFont(GUI_window.fontManager.getFont());
 		inputText.setForeground(Color.WHITE);
 		inputText.setPreferredSize(new Dimension (740 - 50, 200));
 		inputText.setAlignmentX(10);

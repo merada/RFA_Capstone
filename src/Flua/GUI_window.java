@@ -21,6 +21,11 @@ public class GUI_window extends JFrame {
 	private InputHandler inputHandler;
 	
 	/**
+	 * FontManager to customize Flua's font
+	 */
+	public static FontManager fontManager;
+	
+	/**
 	 * Panel containing game functionality
 	 */
 	private GamePanel gamePanel;
@@ -38,7 +43,7 @@ public class GUI_window extends JFrame {
 	/**
 	 * List of files containing resources for games
 	 */
-	private String [] comp_game_filenames = {"comp_test_"};
+	private String [] comp_game_filenames = {"comp_0_"};
 
 	/**
 	 * Index to keep track of which resources have been used during the current session
@@ -54,6 +59,10 @@ public class GUI_window extends JFrame {
 	 * Default constructor
 	 */
 	public GUI_window() {
+		
+		// load up game font
+		fontManager = new FontManager();
+
 		inputHandler = new InputHandler(this);
 		initialize();
 		

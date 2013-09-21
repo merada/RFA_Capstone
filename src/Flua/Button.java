@@ -28,7 +28,7 @@ class Button extends JButton {
 		setActionCommand(command);
 		addActionListener(inputHandler);
 		
-		setFont(Driver.fontManager.getFont());
+		setFont(GUI_window.fontManager.getFont());
 	}
 	
 	/**
@@ -46,6 +46,6 @@ class Button extends JButton {
 		setBackground(Color.BLACK);
 		setForeground(Color.WHITE);
 		
-		setFont(Driver.fontManager.getFont());
+		setFont(GUI_window.fontManager.getFont());
 	}
 }

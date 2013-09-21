@@ -24,6 +24,6 @@ class Label extends JLabel {
 		super(message, SwingConstants.CENTER);
 		setOpaque(false);
 		
-		setFont(Driver.fontManager.getFont());
+		setFont(GUI_window.fontManager.getFont());
 	}
 }
