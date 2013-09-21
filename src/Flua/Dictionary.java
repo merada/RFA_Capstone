@@ -15,14 +15,10 @@ import java.io.IOException;
 import java.util.Hashtable;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 /**
 * This class provides a dictionary GUI for the Flua reading project.
-* @author Lauren Antrobus, Merada Ricther
+* @author Lauren Antrobus, Merada Richter
 */
 public class Dictionary extends javax.swing.JFrame
 {
@@ -33,6 +29,11 @@ public class Dictionary extends javax.swing.JFrame
     }*/
 
     /**
+	 * auto-generated serial ID
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	/**
      * Default constructor method.
      */
     public Dictionary()
