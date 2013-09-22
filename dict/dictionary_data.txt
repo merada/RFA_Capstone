@@ -137,7 +137,7 @@ eat#verb eat a meal; take a meal; take in solid food
 eating#noun the act of consuming food
 egg#noun animal reproductive body consisting of an ovum or embryo together with nutritive and protective envelopes; especially the thin-shelled reproductive body laid by e.g. female birds; oval reproductive body of a fowl (especially a hen) used as food
 end#noun a position on the line of scrimmage; the part you are expected to play
-fall#noun a lapse into sin; a loss of innocence or of chastity; a movement downward
+fall#noun to drop downward
 far#adj. at a great distance in time or space or degree; being of a considerable distance or length
 farm#noun workplace consisting of farm buildings and cultivated land as a unit; verb collect fees or profits
 fast#adj. acting or moving or capable of acting or moving quickly; at a rapid tempo
@@ -166,7 +166,7 @@ gas#noun the state of matter distinguished from the solid and liquid states by: 
 girl#noun a young woman; a friendly informal reference to a grown woman
 give#noun the elasticity of something that can be stretched and returns to its original length; verb proffer (a body part)
 glad#adj. feeling happy appreciation; showing or causing joy and pleasure; especially made happy
-goat#noun any of numerous agile ruminants related to sheep but having a beard and straight horns; the tenth sign of the zodiac; the sun is in this sign from about December 22 to January 19
+goat#noun an animal like a sheep, with a beard and straight horns
 going#adj. in full operation; noun advancing toward a goal
 gold#adj. made from or covered with gold; having the deep slightly brownish colour of gold
 gone#adj. having all been spent; no longer retained
@@ -302,7 +302,7 @@ story#noun a piece of fiction that narrates a chain of related events; a structu
 take#noun the act of photographing a scene or part of a scene without interruption; the income or profit arising from such transactions as the sale of land or other property
 talk#noun the act of giving a talk to an audience; an exchange of ideas via conversation
 tall#adj. impressively difficult; great in vertical dimension; high in stature
-teach#noun an English pirate who operated in the Caribbean and off the Atlantic coast of North America (died in 1718); verb accustom gradually to some action or attitude
+teach#verb help other people to learn
 tell#noun a Swiss patriot who lived in the early 14th century and who was renowned for his skill as an archer; according to legend an Austrian governor compelled him to shoot an apple from his son's head with his crossbow (which he did successfully without mishap); verb discern or comprehend
 thank#verb express gratitude or show appreciation to
 then#adj. at a specific prior time; adv. subsequently or soon afterward (often used as sentence connectors)
@@ -472,7 +472,7 @@ mind#noun that which is responsible for one's thoughts and feelings; the seat of
 money#noun wealth reckoned in terms of money; the most common medium of exchange; functions as legal tender
 month#noun a time unit of approximately 30 days; one of the twelve divisions of the calendar year
 morning#noun the time period between dawn and noon; a conventional expression of greeting or farewell
-mouse#noun any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender usually hairless tails; a hand-operated electronic device that controls the coordinates of a cursor on your computer screen as you move it around on a pad; on the bottom of the device is a ball that rolls on the surface of the pad
+mouse#noun. small animal typically with a pointed nose and small ears; like a small rat
 mouth#noun the opening of a jar or bottle; the externally visible part of the oral cavity on the face and the system of organs surrounding the opening
 Mr#noun a form of address for a man
 Mrs#noun a form of address for a married woman
@@ -515,7 +515,7 @@ ready#adj. (of especially money) immediately available; brought into readiness
 real#adj. capable of being treated as fact; being or occurring in fact or actuality; having verified existence; not illusory
 rich#adj. pleasantly full and mellow; very productive
 right#adj. correct in opinion or judgment; (of the side of cloth or clothing) facing or intended to face outward
-river#noun a large natural stream of water (larger than a creek)
+river#noun a large natural stream of water 
 rocket#noun a jet engine containing its own propellant and driven by reaction propulsion; any vehicle self-propelled by a rocket engine
 round#adj. (mathematics) expressed to the nearest integer, ten, hundred, or thousand; having a circular shape
 rule#noun measuring stick consisting of a strip of wood or metal or plastic with a straight edge that is used for drawing straight lines and measuring lengths; a principle or condition that customarily governs behaviour
@@ -538,7 +538,7 @@ someone#noun a human being
 something#noun a thing of some kind
 sometime#adj. belonging to some prior time; adv. at some indefinite or unstated time
 song#noun the act of singing; a short musical composition with words
-sorry#adj. causing dejection; feeling or expressing sorrow or pity
+sorry#adj. feeling or expressing sorrow or pity
 sound#adj. thorough; free from moral defect
 south#adj. situated in or facing or moving toward or coming from the south; adv. in a southern direction
 space#noun the unlimited expanse in which everything is located; a blank area
@@ -554,7 +554,7 @@ stick#noun threat of a penalty; an implement consisting of a length of wood
 stopped#adj. (of a nose) blocked
 stove#noun any heating apparatus; a kitchen appliance used for cooking food
 street#noun a thoroughfare (usually including sidewalks) that is lined with buildings; the part of a thoroughfare between the sidewalks; the part of the thoroughfare on which vehicles travel
-strong#adj. freshly made or left; not faint or feeble
+strong#adj. having physical strength; not weak
 study#noun a room used for reading and writing and studying; a state of deep mental absorption
 such#adj. of so extreme a degree or extent; adv. to so extreme a degree
 sugar#noun a white crystalline carbohydrate used as a sweetener and preservative; informal terms for money
@@ -671,7 +671,7 @@ idea#noun the content of cognition; the main thing you are thinking about; a per
 instead#adv. in place of, or as an alternative to; on the contrary
 known#adj. apprehended with certainty
 laugh#noun a facial expression characteristic of a person laughing; the sound of laughing
-middle#adj. between an earlier and a later period of time; of a stage in the development of a language or literature between earlier and later stages
+middle#adj. half way between two places
 minute#adj. characterized by painstaking care and detailed examination; infinitely or immeasurably small
 across#adv. transversely; to the opposite side
 answer#noun a nonverbal reaction; the principle pleading by the defendant in response to plaintiff's complaint; in criminal law it consists of the defendant's plea of `guilty' or `not guilty' (or nolo contendere); in civil law it must contain denials of all allegations in the plaintiff's complaint that the defendant hopes to controvert and idefencesntain affirmative defences or counterclaims
@@ -727,5 +727,10 @@ surprise#noun the act of surprising someone; a sudden unexpected event
 through#adj. (of a route or journey etc.) continuing without requiring stops or changes; having finished or arrived at completion
 usually#adv. under normal conditions
 ME#noun. Used by a speaker to refer to himself or herself. For example: "wait for me!"
-HELLO#noun an expression of greeting whaaat
-HELLO#noun an expression of greeting
+horn#noun. A growth on an animals head
+lion#noun. big wild, African cat 
+pity#feeling sorry
+pirate#someone who lives on a boat
+brave#adj. not scared
+monkey#noun. type of animal that has a long tail and lives in trees
+
