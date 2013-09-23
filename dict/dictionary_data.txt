@@ -732,5 +732,5 @@ lion#noun. big wild, African cat
 pity#feeling sorry
 pirate#someone who lives on a boat
 brave#adj. not scared
-monkey#noun. type of animal that has a long tail and lives in trees
-
+monkey#noun. type of animal that has a long tail and lives in treesPET#adj. a tame animal you keep at home
+PET#adj. a tame animal you keep at home, like a cat or dog
